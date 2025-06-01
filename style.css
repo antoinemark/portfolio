@@ -1,0 +1,408 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f6fa;
+    color: #222;
+    line-height: 1.6;
+    padding-top: 68px; /* Ajuste para altura do nav fixo */
+}
+
+/* Paleta azul e verde suavizada e harmônica */
+
+/* Azul principal */
+:root {
+    --azul-principal: #1976d2;
+    --azul-claro: #e3f2fd;
+    --azul-medio: #64b5f6;
+    --azul-escuro: #0d47a1;
+    --verde-principal: #388e3c;
+    --verde-claro: #e8f5e9;
+    --verde-medio: #81c784;
+    --verde-escuro: #1b5e20;
+}
+
+nav {
+    background: var(--azul-principal);
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--azul-medio);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+main .container {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    min-height: 60vh; /* Garante altura mínima para centralização */
+}
+
+.perfil {
+    flex: 1;
+    text-align: center;
+}
+
+#foto-perfil {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--azul-medio);
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,170,255,0.1);
+}
+
+.perfil h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.perfil h2 {
+    font-size: 1.2rem;
+    color: var(--azul-principal);
+    font-weight: 400;
+}
+
+.sobre {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.background h3,
+#projetos h3,
+#experiencias h3 {
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.background .container > div {
+    margin-bottom: 1.5rem;
+}
+
+.background h1 {
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.background h2 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+#certificacoes {
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    background: linear-gradient(90deg, var(--verde-claro) 60%, var(--azul-claro) 100%);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,170,255,0.08);
+    border-left: 6px solid var(--verde-principal);
+    border-right: 2px solid var(--azul-principal);
+}
+
+#certificacoes > h2 {
+    font-size: 1.5rem;
+    color: var(--verde-principal);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px var(--verde-claro);
+    text-align: left;
+}
+
+#certificacoes ul {
+    list-style: disc inside;
+    margin-left: 1rem;
+}
+
+#certificacoes li {
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+#certificacoes p {
+    margin-left: 1.5rem;
+    color: #666;
+    font-size: 0.97rem;
+    margin-bottom: 0.5rem;
+}
+
+.certificado {
+    background: #fff;
+    border-left: 4px solid var(--verde-medio);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 8px rgba(0,151,167,0.07);
+    transition: box-shadow 0.2s;
+}
+
+.certificado:hover {
+    box-shadow: 0 4px 16px rgba(0,151,167,0.13);
+}
+
+#certificacoes .certificado h3 {
+    font-size: 1.08rem;
+    color: var(--verde-principal) !important; /* Verde escuro */
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    letter-spacing: 1px;
+}
+
+.certificado p {
+    margin-left: 0.5rem;
+    color: #555;
+    font-size: 0.98rem;
+    margin-bottom: 0.3rem;
+}
+
+.cert-local {
+    display: block;
+    color: var(--verde-escuro);
+    font-size: 0.98rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    margin-top: -0.1rem;
+    letter-spacing: 1px;
+}
+
+.projeto, .experiencia, .formacao {
+    background: var(--azul-claro);
+    border-left: 4px solid var(--azul-principal);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 1px 6px rgba(0,170,255,0.04);
+}
+
+.projeto h1, .experiencia h1, .formacao h1 {
+    font-size: 1.1rem;
+    color: var(--azul-principal);
+    margin-bottom: 0.2rem;
+}
+
+.projeto a {
+    display: inline-block;
+    margin-right: 1rem;
+    color: var(--azul-principal);
+    text-decoration: underline;
+    font-size: 0.98rem;
+    margin-top: 0.4rem;
+}
+
+.projeto a:hover {
+    color: var(--azul-escuro);
+}
+
+#contato .container {
+    background: var(--azul-claro);
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,170,255,0.04);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+#contato h1 {
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+}
+
+.contato p {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.contato a {
+    color: var(--azul-principal);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contato a:hover {
+    color: var(--azul-escuro);
+    text-decoration: underline;
+}
+
+/* Formações Acadêmicas */
+.formacoes h3 {
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.formacao {
+    background: var(--azul-claro);
+    border-left: 4px solid var(--azul-principal);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 1px 6px rgba(0,170,255,0.04);
+}
+
+.formacao h1 {
+    font-size: 1.1rem;
+    color: var(--azul-principal);
+    margin-bottom: 0.2rem;
+}
+
+.form-local {
+    display: block;
+    color: var(--azul-medio);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+    margin-top: -0.2rem;
+    letter-spacing: 1px;
+}
+
+.form-periodo {
+    display: block;
+    color: var(--azul-escuro);
+    font-size: 0.97rem;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    margin-top: -0.1rem;
+    letter-spacing: 1px;
+}
+
+/* Projetos */
+#projetos h3 {
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.projeto {
+    background: var(--azul-claro);
+    border-left: 4px solid var(--azul-principal);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 1px 6px rgba(0,170,255,0.04);
+}
+
+.projeto h1 {
+    font-size: 1.1rem;
+    color: var(--azul-principal);
+    margin-bottom: 0.2rem;
+}
+
+.proj-local {
+    display: block;
+    color: var(--azul-medio);
+    font-size: 0.98rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    margin-top: -0.1rem;
+    letter-spacing: 1px;
+}
+
+/* Experiências */
+#experiencias h3 {
+    color: var(--azul-principal);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.experiencia {
+    background: var(--azul-claro);
+    border-left: 4px solid var(--azul-principal);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 1px 6px rgba(0,170,255,0.04);
+}
+
+.experiencia h1 {
+    font-size: 1.1rem;
+    color: var(--azul-principal);
+    margin-bottom: 0.2rem;
+}
+
+.experiencia h2 {
+    font-size: 1rem;
+    color: var(--azul-medio);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    margin-top: -0.1rem;
+    letter-spacing: 1px;
+}
+
+.exp-periodo {
+    display: block;
+    color: var(--azul-escuro);
+    font-size: 0.98rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    margin-top: -0.1rem;
+    letter-spacing: 1px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    main .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .perfil, .sobre {
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    nav ul {
+        gap: 1rem;
+    }
+    #foto-perfil {
+        width: 100px;
+        height: 100px;
+    }
+}
